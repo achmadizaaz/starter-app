@@ -25,6 +25,8 @@ class User extends Authenticatable
         'slug',
         'email',
         'password',
+        'password_default',
+        'is_active',
         'last_login_at',
         'last_login_ip',
     ];

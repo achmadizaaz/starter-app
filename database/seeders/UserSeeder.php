@@ -23,7 +23,9 @@ class UserSeeder extends Seeder
             'name'      => 'Super Administrator',
             'username'  => 'superadmin',
             'email'     => 'superadmin@example.com',
+            'is_active'     => 1,
             'password'  => Hash::make('password123'),
+            'password_default'     => 'superadmin',
         ]);
 
         // Add role to user
