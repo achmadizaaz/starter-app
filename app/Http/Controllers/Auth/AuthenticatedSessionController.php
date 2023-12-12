@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Helpers\LogActivityLoginHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
@@ -28,6 +29,15 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+        
+        // Update last login and ip
+        $request->user()->update([
+            'last_login_at' => now()->toDateTimeString(),
+            'last_login_ip' => $request->getClientIp()
+        ]);
+
+        // Add to log login
+        LogActivityLoginHelper::addToLog('login');
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
@@ -37,6 +47,9 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
+        // Add to log login (log out)
+        LogActivityLoginHelper::addToLog('logout');
+
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
