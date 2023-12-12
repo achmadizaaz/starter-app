@@ -1,3 +1,2 @@
-import './bootstrap';
-
-require('bootstrap');
+import "./bootstrap";
+import "./bootstrap.bundle.min";

@@ -1,0 +1,96 @@
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #6D2CED;
+    --bs-btn-border-color: #6d2cef;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #5b16e5;
+    --bs-btn-hover-border-color: #5b16e5;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #5b16e5;
+    --bs-btn-active-border-color: #5b16e5;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #6627e05e;
+    --bs-btn-disabled-border-color: #6627e05e;
+}
+.btn-info {
+    --bs-btn-color: #eee;
+    --bs-btn-bg: #00c0ef;
+    --bs-btn-border-color: #00c0ef;
+    --bs-btn-hover-color: #eee;
+    --bs-btn-hover-bg: #00b8e5;
+    --bs-btn-hover-border-color: #00b8e5;
+    --bs-btn-focus-shadow-rgb: 11, 172, 204;
+    --bs-btn-active-color: #eee;
+    --bs-btn-active-bg: #00b8e5;
+    --bs-btn-active-border-color: #00b8e5;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #eee;
+    --bs-btn-disabled-bg: #0dcaf0;
+    --bs-btn-disabled-border-color: #0dcaf0;
+}
+
+body{
+    background: #eee;
+}
+
+body, .navbar-header, .vertical-menu, .main-content, .footer{
+    transition: all .4s;
+}
+
+.bg-header {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 115px;
+    background-color: #6d2cef;
+    z-index: -1;
+}
+
+/* USER MENU */
+.user-profile {
+    padding: 40px 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-modul {
+    padding: 5px 10px;
+}
+
+/* DARK MODE */
+[data-bs-theme=dark] body {
+    background-color: #212529;;
+  }
+
+  /* SIDEBAR MENU */
+[data-bs-theme=dark] .vertical-menu {
+    background: #1b1f22
+}
+
+[data-bs-theme=dark] .menu-title,
+[data-bs-theme=dark] #sidebar-menu ul li a,
+[data-bs-theme=dark] #sidebar-menu ul li a i,
+[data-bs-theme=dark] .sub-menu li a {
+    color: #eee;
+}
+[data-bs-theme=dark] #sidebar-menu ul li ul.sub-menu {
+    padding: 0;
+    background-color: #212529;
+}
+
+[data-bs-theme=dark]  .page-title-box{
+    color: #eee;
+    background-color: #212529;
+    border: 1px solid #3c4044;
+}
+
+/* FOOTER */
+[data-bs-theme=dark] .footer{
+    background-color: #212529;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}

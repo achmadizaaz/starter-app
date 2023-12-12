@@ -1,0 +1,311 @@
+body {
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    background: #f3f3f4;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #343a40;
+    font-family: "Poppins", sans-serif;
+}
+
+.card {
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid #f1f5f7;
+    border-radius: 0.4rem;
+}
+div.dataTables_wrapper div.dataTables_info {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.page-link {
+    font-size: 12px;
+    color: #333;
+    background-color: #ffff;
+    border-color: #f3f3f3;
+    border-radius: 10px;
+    margin: 3px;
+}
+
+.page-item:first-child .page-link {
+    border-radius: 10px;
+}
+.page-item:last-child .page-link {
+    border-radius: 10px;
+}
+
+.page-link.active,
+.active > .page-link {
+    color: #fff;
+    background-color: #333;
+    border-color: #222;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #243992;
+    border-color: #1d2f83;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #1c3088;
+    border-color: #1c3088;
+}
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
+    color: #fff;
+    background-color: #16213b;
+    border-color: #16212b;
+    border-color: rgba(16, 45, 161, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+        0 0 8px rgba(16, 45, 161, 0.6);
+}
+.btn-check:checked + .btn-primary,
+.btn-check:active + .btn-primary,
+.btn-primary:active,
+.btn-primary.active,
+.show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #098e79;
+    border-color: #088571;
+}
+.btn-check:checked + .btn-primary:focus,
+.btn-check:active + .btn-primary:focus,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+    -webkit-box-shadow: 0 0 0 0.15rem rgba(48, 28, 163, 0.5);
+    box-shadow: 0 0 0 0.15rem rgba(41, 21, 155, 0.5);
+}
+.btn-primary:disabled,
+.btn-primary.disabled {
+    color: #fff;
+    background-color: #0f172a;
+    border-color: #0f172a;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-control:focus {
+    border-color: rgba(15, 15, 179, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+        0 0 8px rgba(15, 15, 179, 0.6);
+    outline: 0 none;
+}
+
+.select2-container--bootstrap-5.select2-container--focus .select2-selection,
+.select2-container--bootstrap-5.select2-container--open .select2-selection {
+    border-color: rgba(16, 45, 161, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+        0 0 8px rgba(16, 45, 161, 0.6);
+    outline: 0 none;
+}
+
+/* DARK MODE */
+body.dark-mode .h1,
+body.dark-mode .h2,
+body.dark-mode .h3,
+body.dark-mode .h4,
+body.dark-mode .h5,
+body.dark-mode .h6,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #ddd;
+}
+
+body.dark-mode {
+    background: #1d1d1d;
+}
+body.dark-mode .form-label {
+    color: #ddd;
+}
+
+body.dark-mode .form-control {
+    background-color: #121212;
+    color: #ddd;
+    border: 1px solid #4d4a4a;
+}
+body.dark-mode .input-group-text {
+    background-color: #121212;
+    color: #ddd;
+    border: 1px solid #4d4a4a;
+}
+
+body.dark-mode .form-select {
+    background-color: #121212;
+    color: #ddd;
+    border: 1px solid #4d4a4a;
+}
+
+body.dark-mode .select2-container .select2-selection--single {
+    background-color: #121212 !important;
+    color: #ddd;
+    border: 1px solid #4d4a4a;
+}
+
+body.dark-mode .select2-container--bootstrap-5 .select2-dropdown {
+    background-color: #121212 !important;
+    color: #ddd;
+    border: 1px solid #4d4a4a;
+}
+
+body.dark-mode
+    .select2-container--bootstrap-5
+    .select2-dropdown
+    .select2-search
+    .select2-search__field {
+    background-color: #252525;
+    color: #ddd;
+}
+body.dark-mode
+    .select2-container--bootstrap-5
+    .select2-selection--single
+    .select2-selection__rendered {
+    color: #ddd;
+}
+body.dark-mode .form-check-input {
+    background-color: #121212;
+}
+body.dark-mode .form-check-input:checked {
+    background-color: #3411d1;
+}
+
+body.dark-mode .footer {
+    background-color: #252525;
+}
+body.dark-mode .modal-content {
+    background-color: #121212;
+    background-clip: padding-box;
+    border: 1px solid rgb(141 139 139 / 18%);
+}
+
+body.dark-mode .navbar-header {
+    color: #ddd;
+    background: #1d1d1d;
+    border-bottom: 2px solid #252525 !important;
+}
+
+body.dark-mode .navbar-header .dropdown .show.header-item {
+    background-color: #252525;
+}
+
+body.dark-mode .navbar-brand-box {
+    background: #252525;
+    border-bottom: 1px solid #121212;
+}
+
+body.dark-mode .dropdown-menu {
+    background: #252525;
+}
+
+body.dark-mode .dropdown-item {
+    color: #ddd;
+}
+
+body.dark-mode .dropdown-item:hover {
+    color: #088571;
+}
+
+body.dark-mode .vertical-menu {
+    background: #252525;
+}
+
+body.dark-mode li.mm-active {
+    background: #1d1d1d !important;
+}
+body.dark-mode li.mm-active {
+    background: #1d1d1d !important;
+}
+
+body.dark-mode #sidebar-menu ul li:hover a {
+    background: #1d1d1d !important;
+}
+
+body.dark-mode .page-title-box {
+    color: #ddd;
+    background: #252525 !important;
+}
+
+body.dark-mode .card {
+    background: #252525 !important;
+    color: #ddd;
+}
+
+body.dark-mode .card .btn-light {
+    background: #252525 !important;
+    border: 1px solid #1d1d1d !important;
+}
+
+body.dark-mode .table {
+    color: #ddd;
+    border: 1px solid #222 !important;
+}
+
+body.dark-mode .table td {
+    color: #ddd;
+}
+
+body.dark-mode th.bg-light {
+    background: #333 !important;
+}
+
+body.dark-mode td.bg-light {
+    background: #333 !important;
+}
+
+body.dark-mode .modal-content {
+    color: #ddd;
+}
+
+body.dark-mode .swal2-popup {
+    border: 2px solid #4e4e4e;
+    background: #1d1d1d;
+    color: #ddd;
+}
+
+body.dark-mode .fc-basic-view .fc-day-number,
+body.dark-mode .fc-basic-view .fc-week-number {
+    color: #ddd;
+}
+
+body.dark-mode .fc-unthemed td.fc-today {
+    background: #243992;
+    border-top: 1px solid #ddd;
+}
+
+
+[data-bs-theme=dark] .navbar-header {
+    color: #ddd;
+    background: #1d1d1d;
+    border-bottom: 2px solid #252525 !important;
+}
+[data-bs-theme=dark]  body {
+    background: #252525
+}
+
+[data-bs-theme=dark]  .card {
+    background: #252525 !important;
+    color: #ddd;
+}

@@ -4,34 +4,79 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        
+        <title>@yield('title', config('app.name', 'Laravel') )</title>
 
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <!-- Scripts -->
-        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+        @vite(['resources/sass/app.scss', 'public/css/custom.css','resources/js/app.js'])
+
+        <!-- Styles -->
+        <link href="{{ asset('themes/css/theme.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+
+         <!-- Icons Css -->
+         <link href="{{ asset('themes/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+
+    <script src="{{ asset('themes/js/jquery.min.js') }}"></script>
+        <script>
+            if (localStorage.getItem('mode') === 'dark') {
+                $('html').attr('data-bs-theme', 'dark');
+                $("#icon-mode").addClass("bi-moon-stars-fill").removeClass("bi-sun-fill");
+            }
+        </script>
+
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+    <body>
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+        @include('layouts.header')
+        @include('layouts.navigation')
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container">
+                    @yield('content')
+                </div>
+            </div>
+           @include('layouts.footer')
         </div>
+
+        <script src="{{ asset('themes/libs/metismenu/metisMenu.min.js') }}"></script>
+        <script src="{{ asset('themes/libs/simplebar/simplebar.min.js') }}"></script>
+        <script src="{{ asset('themes/libs/node-waves/waves.min.js') }}"></script>
+
+        <script src="{{ asset('themes/js/app.js') }}"></script>
+
+        <script>
+            if (localStorage.getItem('mode') === 'dark') {
+                $("#icon-mode").addClass("bi-moon-stars-fill").removeClass("bi-sun-fill");
+                $('#text-mode').text('Dark Mode');
+            }
+
+            // Toggle dark mode on button click
+            $('#darkToggle').click(function() {
+                $('html').attr('data-bs-theme', 'dark');
+                $('#text-mode').text('Dark Mode');
+                let mode = 'dark';
+                // Save user preference to localStorage
+                localStorage.setItem('mode', mode);
+
+                $("#icon-mode").addClass("bi-moon-stars-fill").removeClass("bi-sun-fill");
+ 
+            });
+
+            // Toggle light mode on button click
+            $('#lightToggle').click(function() {
+                $('html').removeAttr('data-bs-theme');
+                $('#text-mode').text('Light Mode');
+
+                let mode = 'light';
+                // Save user preference to localStorage
+                localStorage.setItem('mode', mode);
+                
+                $("#icon-mode").addClass("bi-sun-fill").removeClass("bi-moon-stars-fill");
+            });
+        </script>
     </body>
 </html>
