@@ -20,7 +20,7 @@
                 </a>
                   <ul class="sub-menu" aria-expanded="false">
                     <li>
-                        <a href="#" class="waves-effect">
+                        <a href="{{ route('users.index') }}" class="waves-effect">
                             <span>List Pengguna</span>
                         </a>
                     </li>                  
