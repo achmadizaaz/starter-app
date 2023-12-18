@@ -21,6 +21,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'image',
         'username',
         'slug',
         'email',
@@ -59,5 +60,31 @@ class User extends Authenticatable
             ]
         ];
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function scopeFilter($query, $search){
+        $query->where('name', 'like', '%' . $search . '%') 
+                        ->orWhere('username', 'like', '%' . $search . '%')
+                        ->orWhere('email', 'like', '%' . $search . '%');
+      
+    }
+    // public function scopeFilter($query, array $filters){
+    //     $query->when($filters['search'] ?? false, function($query, $search){
+    //         return $query->where('name', 'like', '%' . $search . '%') 
+    //                     ->orWhere('username', 'like', '%' . $search . '%')
+    //                     ->orWhere('email', 'like', '%' . $search . '%');
+    //     });
+    // }
+
+    // Relationship
+    public function profile()
+    {
+        return $this->hasOne(ProfileUser::class);
+    }
+
 
 }
