@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('title-page', 'Bangunan Aplikasi Sarpras')
-@section('content')
 
 @section('content')
     {{-- Start page title --}}
