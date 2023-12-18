@@ -47,35 +47,38 @@
         <script src="{{ asset('themes/libs/node-waves/waves.min.js') }}"></script>
 
         <script src="{{ asset('themes/js/app.js') }}"></script>
+        <script src="{{ asset('themes/js/sweetalert2.js') }}"></script>
 
+         <!-- Scripts -->
+         
+        @stack('scripts')
+        
         <script>
+
+            // If dark mode, change icon sun to moon
             if (localStorage.getItem('mode') === 'dark') {
                 $("#icon-mode").addClass("bi-moon-stars-fill").removeClass("bi-sun-fill");
                 $('#text-mode').text('Dark Mode');
             }
 
             // Toggle dark mode on button click
-            $('#darkToggle').click(function() {
-                $('html').attr('data-bs-theme', 'dark');
-                $('#text-mode').text('Dark Mode');
-                let mode = 'dark';
-                // Save user preference to localStorage
-                localStorage.setItem('mode', mode);
-
-                $("#icon-mode").addClass("bi-moon-stars-fill").removeClass("bi-sun-fill");
- 
-            });
-
-            // Toggle light mode on button click
-            $('#lightToggle').click(function() {
-                $('html').removeAttr('data-bs-theme');
-                $('#text-mode').text('Light Mode');
-
-                let mode = 'light';
-                // Save user preference to localStorage
-                localStorage.setItem('mode', mode);
-                
-                $("#icon-mode").addClass("bi-sun-fill").removeClass("bi-moon-stars-fill");
+            $('#button-mode').click(function() {
+                // If not dark mode, change to dark mode
+                if (localStorage.getItem('mode') !== 'dark') {
+                    $('html').attr('data-bs-theme', 'dark')
+                    $("#icon-mode").addClass("bi-moon-stars-fill").removeClass("bi-sun-fill");
+                    let mode = 'dark';
+                    // Save user preference to localStorage
+                    localStorage.setItem('mode', mode);
+                    
+                    // If dark mode, remove dark mode
+                }else{
+                    $('html').removeAttr('data-bs-theme');
+                    $("#icon-mode").addClass("bi-sun-fill").removeClass("bi-moon-stars-fill");
+                    let mode = 'light';
+                    // Save user preference to localStorage
+                    localStorage.setItem('mode', mode);
+                }
             });
         </script>
     </body>
