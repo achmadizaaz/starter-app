@@ -295,17 +295,38 @@ body.dark-mode .fc-unthemed td.fc-today {
     border-top: 1px solid #ddd;
 }
 
-
-[data-bs-theme=dark] .navbar-header {
+[data-bs-theme="dark"] .navbar-header {
     color: #ddd;
     background: #1d1d1d;
     border-bottom: 2px solid #252525 !important;
 }
-[data-bs-theme=dark]  body {
-    background: #252525
+[data-bs-theme="dark"] body {
+    background: #252525;
 }
 
-[data-bs-theme=dark]  .card {
+[data-bs-theme="dark"] .card {
     background: #252525 !important;
     color: #ddd;
+}
+
+/* Pagination custom */
+.page-link {
+    font-size: 12px;
+    color: #333;
+    background-color: #ffff;
+    border-color: #f3f3f3;
+    border-radius: 10px;
+    margin: 3px;
+}
+.page-item:first-child .page-link {
+    border-radius: 10px;
+}
+.page-item:last-child .page-link {
+    border-radius: 10px;
+}
+.page-link.active,
+.active > .page-link {
+    color: #fff;
+    background-color: #333;
+    border-color: #222;
 }
